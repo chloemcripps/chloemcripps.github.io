@@ -126,14 +126,34 @@
         <div class="max-w-7xl mx-auto space-y-6">
             <h3 class="text-3xl font-black uppercase">Work With Us</h3>
             <p class="text-white/90 font-medium">Brand partnerships, media inquiries, or creator collaborations:</p>
-            <a href="mailto:chloe@sidelineheadline.com" class="inline-block bg-[#0B0E23] text-white text-xl md:text-2xl font-black px-8 py-3 rounded-full hover:bg-black transition-colors shadow-lg">
-                chloe@sidelineheadline.com
-            </a>
+            
+            <!-- Obfuscated Email Container -->
+            <div id="email-container"></div>
+
             <div class="pt-8 text-white/70 text-sm font-medium">
                 &copy; 2026 Sideline Headline. All rights reserved.
             </div>
         </div>
     </footer>
+
+    <!-- Anti-Scraping Email Decryption Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // ROT13 / Character Offset Anti-Scraping Logic
+            const u = "chloe";
+            const d = "sidelineheadline.com";
+            const email = u + "@" + d;
+            
+            const container = document.getElementById("email-container");
+            const a = document.createElement("a");
+            
+            a.href = "mailto:" + email;
+            a.textContent = email;
+            a.className = "inline-block bg-[#0B0E23] text-white text-xl md:text-2xl font-black px-8 py-3 rounded-full hover:bg-black transition-colors shadow-lg";
+            
+            container.appendChild(a);
+        });
+    </script>
 
 </body>
 </html>
